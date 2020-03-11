@@ -18,6 +18,7 @@ console.log(button);
 function colorful(e) {
     var colorIt = 'rgb(' + Math.random()*255 + ',' + Math.random()*255 + ',' + Math.random()*255 + ')'; 
     e.target.style.backgroundColor = colorIt;
+    e.stopPropagation();
 }
 button.forEach(element => {
     element.addEventListener('click', colorful);
@@ -108,13 +109,10 @@ let child = document.querySelector('.destination .btn');
 
 parent.addEventListener('click', event => {
     event.target.style.backgroundColor = 'red';
-    
     console.log('parent clicked')
-} );
+}); 
 
 child.addEventListener('click', event => {
-    console.log('childe clicked');
+    console.log('child clicked');
     event.stopPropagation();
 });
-
-parent.addEventListener()
